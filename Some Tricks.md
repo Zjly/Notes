@@ -38,10 +38,54 @@ for(HashMap.Entry<String, String> entry : hashmap.entrySet()) {
 
 ### Latex公式表示
 
-|   名称   |                 Latex表示                  |                    示例                    |
-| :------: | :----------------------------------------: | :----------------------------------------: |
-| 字母粗体 |                 \mathbf{}                  |                $\mathbf{A}$                |
-|  大括号  | \begin{cases} a & b \\\\ c & d \end{cases} | $\begin{cases} a & b \\ c & d \end{cases}$ |
-|  无限大  |                   \infty                   |                  $\infty$                  |
-|   空格   |                     \                      |                    $\ $                    |
+|     名称     |                 Latex表示                  |                    示例                    |
+| :----------: | :----------------------------------------: | :----------------------------------------: |
+|   粗体字母   |                 \mathbf{}                  |                $\mathbf{A}$                |
+|   空心字母   |                 \mathbb{}                  |                $\mathbb{A}$                |
+|    大括号    | \begin{cases} a & b \\\\ c & d \end{cases} | $\begin{cases} a & b \\ c & d \end{cases}$ |
+|    无限大    |                   \infty                   |                  $\infty$                  |
+|     空格     |                     \                      |                    $\ $                    |
+|     分数     |                \frac{a}{b}                 |               $\frac{a}{b}$                |
+|   求和符号   |              \sum\limits_{a}               |             $\sum\limits_{a}$              |
+| 字母上方箭头 |  \overrightarrow{a} 或 \overleftarrow{b}   | $\overrightarrow{a}$或$\overleftarrow{b}$  |
+|     圈加     |                   \oplus                   |                  $\oplus$                  |
+|     换行     |   \begin{split} &aaa \\ &bb \end{split}    |  $\begin{split} &aaa \\ &bb \end{split}$   |
+
+### Git修改已提交的commit的作者信息
+
+1. 进入Git Bash；
+
+2. 输入指令，查看前n条记录：
+
+   ```
+   git rebase -i HEAD~n
+   ```
+   
+3. 使用VIM指令，先按"ESC"，然后按"S"进入插入模式。将需要修改的提交前面的"pick"修改为"edit"；
+
+4. 再次按"ESC"，然后输入":wq"并回车保存文本内容并退出VIM；
+
+5. 输入指令，修改作者信息：
+
+   ```
+   git commit --amend --author "Zhang Lei <942471854@qq.com>" --no-edit
+   ```
+
+6. 输入指令，进入下一条commit进行修改：
+
+   ```
+   git rebase --continue
+   ```
+
+7. 重复步骤5/6，直至完成修改出现下述提示信息：
+
+   ```
+   Successfully rebased and updated refs/heads/master.
+   ```
+
+### 注册表修改右键新建文件菜单
+
+- 地址：计算机\HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Discardable\PostSetup\ShellNew
+- 双击Classes打开文件
+- 删除不需要的后缀名
 
