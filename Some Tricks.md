@@ -36,6 +36,14 @@ for(HashMap.Entry<String, String> entry : hashmap.entrySet()) {
 }
 ```
 
+```
+for (int key : hashmap.keySet()) {
+
+}
+```
+
+
+
 ### Latex公式表示
 
 |     名称     |                 Latex表示                  |                    示例                    |
@@ -82,6 +90,20 @@ for(HashMap.Entry<String, String> entry : hashmap.entrySet()) {
    ```
    Successfully rebased and updated refs/heads/master.
    ```
+
+### Git删除commit
+
+1. 进入Git Bash；
+
+2. 输入指令，跳转到待删除的commit的前一条commit
+
+   ```
+   git rebase -i 42ce4f1ed3c4efcbb9456614c1a4a264856048d3
+   ```
+
+3. 按“I”进入编辑模式，将需要删除的commit的pick改为drop
+
+4. 按“ESC”退出编辑，输入":wq"并回车保存
 
 ### 注册表修改右键新建文件菜单
 
