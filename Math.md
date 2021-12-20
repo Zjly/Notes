@@ -1,3 +1,74 @@
+# 数学
+
+## 高等数学
+
+## 应用数理统计
+
+### 数理统计的基本概念
+
+#### 统计量
+
+##### 样本均值
+
+$\overline{X}=\frac{1}{n}\sum\limits_{i=1}^{n}X_i$
+
+##### 样本方差
+
+$S^2=\frac{1}{n-1}\sum\limits_{i=1}^{n}(X_i-\overline X)^2$
+
+##### k阶原点矩
+
+$A_k=\frac{1}{n}\sum\limits_{i=1}^nX_i^k$
+
+##### k阶中心矩
+
+$B_k=\frac1n \sum\limits_{i=1}^n{(X_i-\overline X)^k}$
+
+##### 统计量的性质
+
+- $E(\overline X)=E(X)$
+
+- $D(\overline X)=\frac{D(X)}{n}$
+- $E(S^2)=D(X)$
+
+### 参数估计
+
+#### 矩估计
+
+##### 一阶矩
+
+$\overline X=EX$
+
+##### 二阶矩
+
+$\frac1n \sum\limits_{i=1}^n{X_i}^2=E(X^2)$
+
+#### 最大似然估计
+
+$L(x_1,x_2,...,x_n;\theta)=\prod\limits_{i=1}^nf(x_i;\theta)$
+
+- 若似然函数有驻点，令$\frac{dL}{d\theta}=0$或$\frac{dlnL}{d\theta}=0$，解出$\hat{\theta}$
+
+- 若似然函数单调，则用定义求$\hat{\theta}$
+
+- 若似然函数为常数，则用定义求$\hat{\theta}$，此时$\hat{\theta}$不唯一
+
+#### 估计量的评价
+
+##### 无偏性
+
+$E\hat\theta=\theta$
+
+##### 有效性
+
+$E\hat\theta_1=\theta$，$E\hat\theta_2=\theta$，当$D\hat\theta_1<D\hat\theta_2$时，称$\hat\theta_1$比$\hat\theta_2$有效
+
+##### 相合性（一致性）
+
+$\lim\limits_{n\rightarrow \infty}P\{|\hat\theta-\theta|<\epsilon\}=1$
+
+可以利用切比雪夫不等式：$P\{|X-EX|<\epsilon\}\geq1-\frac{DX}{\epsilon^2}$
+
 ### 假设检验
 
 #### 错误
