@@ -58,6 +58,8 @@ for (int key : hashmap.keySet()) {
 | 字母上方箭头 |  \overrightarrow{a} 或 \overleftarrow{b}   | $\overrightarrow{a}$或$\overleftarrow{b}$  |
 |     圈加     |                   \oplus                   |                  $\oplus$                  |
 |     换行     |   \begin{split} &aaa \\ &bb \end{split}    |  $\begin{split} &aaa \\ &bb \end{split}$   |
+| 字母上方横线 |                \overline{a}                |               $\overline{a}$               |
+|  字母上方^   |                  \hat{a}                   |                 $\hat{a}$                  |
 
 ### Git修改已提交的commit的作者信息
 
