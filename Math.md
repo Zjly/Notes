@@ -167,3 +167,35 @@ $\chi^2=\sum\limits_{i=1}^k\frac{(f_i-n\hat p_i)^2}{n\hat p_i}\sim\chi^2(k-r-1)$
 
 $r$为未知参数的个数
 
+### 方差分析
+
+#### 单因素
+
+组内平均：$\overline X_{.j}=\frac{1}{n}\sum\limits_{i=1}^{n_j}X_{ij}$
+
+样本总平均：$\overline X=\frac{1}{n}\sum\limits_{j=1}^{s}\sum\limits_{i=1}^{n_j}X_{ij}$
+
+| 方差来源 | 离差平方和                                                   | 自由度 | 均方离差                        | F值                                                    |
+| -------- | ------------------------------------------------------------ | ------ | ------------------------------- | ------------------------------------------------------ |
+| 因素A    | 组间离差：$S_A=\sum\limits_{j=1}^{s}\sum\limits_{i=1}^{n_j}(\overline X_{.j}-\overline X)^2$ | $s-1$  | $\overline S_A=\frac{S_A}{s-1}$ | $F=\frac{\overline S_A}{\overline S_E}\sim F(s-1,n-s)$ |
+| 误差E    | 组内离差：$S_E=\sum\limits_{j=1}^{s}\sum\limits_{i=1}^{n_j}(X_{ij}-\overline X_{.j})^2$ | $n-s$  | $\overline S_E=\frac{S_E}{n-s}$ |                                                        |
+| 总和T    | 离差平方和：$S_T=\sum\limits_{j=1}^{s}\sum\limits_{i=1}^{n_j}(X_{ij}-\overline X)^2=S_E+S_A$ | $n-1$  |                                 |                                                        |
+
+#### 双因素
+
+| 方差来源 | 离差平方和                                                   | 自由度       | 均方离差                               | F值                                                          |
+| -------- | ------------------------------------------------------------ | ------------ | -------------------------------------- | ------------------------------------------------------------ |
+| 因素A    | $S_A=s \sum\limits_{i=1}^{r}(\overline X_{i.}-\overline X)^2$ | $r-1$        | $\overline S_A=\frac{S_A}{r-1}$        | $F_A=\frac{\overline S_A}{\overline S_E} \sim F(r-1,(r-1)(s-1))$ |
+| 因素B    | $S_B=r \sum\limits_{j=1}^{s}(\overline X_{.j}-\overline X)^2$ | $s-1$        | $\overline S_B=\frac{S_B}{s-1}$        | $F_B=\frac{\overline S_B}{\overline S_E} \sim F(s-1,(r-1)(s-1))$ |
+| 误差E    | $S_E=\sum\limits_{i=1}^{r} \sum\limits_{j=1}^{s} (X_{ij}-\overline X_{i.}-\overline X_{.j} + \overline X)^2$ | $(r-1)(s-1)$ | $\overline S_E=\frac{S_E}{(r-1)(s-1)}$ |                                                              |
+| 总和T    | $S_T=\sum\limits_{i=1}^{r} \sum\limits_{j=1}^{s} (X_{ij}-\overline X)^2$ | $rs-1$       |                                        |                                                              |
+
+重复试验双因素
+
+| 方差来源  | 离差平方和                                                   | 自由度       | 均方离差                               | F值                                                          |
+| --------- | ------------------------------------------------------------ | ------------ | -------------------------------------- | ------------------------------------------------------------ |
+| 因素A     | $S_A=sc \sum\limits_{i=1}^{r}(\overline X_{i..}-\overline X)^2$ | $r-1$        | $\overline S_A=\frac{S_A}{r-1}$        | $F_A=\frac{\overline S_A}{\overline S_E} \sim F(r-1,rs(c-1))$ |
+| 因素B     | $S_B=rc \sum\limits_{j=1}^{s}(\overline X_{.j.}-\overline X)^2$ | $s-1$        | $\overline S_B=\frac{S_B}{s-1}$        | $F_B=\frac{\overline S_B}{\overline S_E} \sim F(s-1,(rs(c-1))$ |
+| 交互作用I | $S_I=c\sum\limits_{i=1}^{r} \sum\limits_{j=1}^{s}  (\overline X_{ij.} - \overline X_{i..} - \overline X_{.j.} + \overline X)^2$ | $(r-1)(s-1)$ | $\overline S_I=\frac{S_I}{(r-1)(s-1)}$ | $F_I=\frac{\overline S_I}{\overline S_E} \sim F((r-1)(s-1),rs(c-1))$ |
+| 误差E     | $S_E=\sum\limits_{i=1}^{r} \sum\limits_{j=1}^{s}  \sum\limits_{k=1}^{c} (X_{ijk}-\overline X_{ij.})^2$ | $rs(c-1)$    | $\overline S_E=\frac{S_E}{rs(c-1)}$    |                                                              |
+| 总和T     | $S_T=\sum\limits_{i=1}^{r} \sum\limits_{j=1}^{s} \sum\limits_{k=1}^{c} (X_{ijk}-\overline X)^2$ | $rsc-1$      |                                        |                                                              |
