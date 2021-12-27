@@ -2,6 +2,72 @@
 
 ## 应用数理统计
 
+### 概率论
+
+#### 常见分布与数字特征
+
+##### 二项分布
+
+$P\{X=k\}=C_n^kp^kq^{n-k}$
+
+$E(X)=np$
+
+$D(X)=np(1-p)$
+
+##### 泊松分布
+
+$P\{X=k\}=\frac{\lambda^ke^{-\lambda}}{k!}$
+
+$E(X)=\lambda$
+
+$D(X)=\lambda$
+
+##### 均匀分布
+
+$F(x)=\begin{cases} 0 & x < a \\\\ \frac{x-a}{b-a} & a<x<b \\\\ 1 & x > b \end{cases}$
+
+$f(x)=\begin{cases} \frac{1}{b-a} & a<x<b \\\\ 0 & other \end{cases}$
+
+$E(X)=\frac{a+b}{2}$
+
+$D(X)=\frac{(b-a)^2}{12}$
+
+##### 指数分布
+
+$F(x)=\begin{cases} 1-e^{-\lambda x} & x \geq 0 \\\\ 0 & other \end{cases}$
+
+$f(x)=\begin{cases} \lambda e^{-\lambda x} & x \geq 0 \\\\ 0 & other \end{cases}$
+
+$E(X)=\frac{1}{\lambda}$
+
+$D(X)=\frac{1}{\lambda^2}$
+
+##### 正态分布
+
+###### 标准正态分布
+
+$f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}$
+
+$E(X)=0$
+
+$D(X)=1$
+
+###### 一维正态分布
+
+$f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{1}{2}\frac{(x-\mu)^2}{\sigma^2}}$
+
+$E(X)=\mu$
+
+$D(X)=\sigma^2$
+
+###### 二维正态分布
+
+$f(x)=\frac{1}{2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}}e^{-\frac{1}{2(1-\rho^2)}(\frac{(x_1-\mu_1)^2}{\sigma_1^2}-\frac{2\rho(x_1-\mu_1)(x_2-\mu_2)}{\sigma_1\sigma_2}+\frac{(x_2-\mu_2)^2}{\sigma_2^2})}$
+
+$E(X)=\mu_1+\mu_2$
+
+$D(X)=\sigma_1^2+\sigma_2^2$
+
 ### 特征函数
 
 #### 二项分布
@@ -221,7 +287,7 @@ $\hat\beta_0=\overline y-\hat\beta_1\overline x$
 
 $Q_e=L_{yy}-\hat\beta_1L_{xy}$
 
-$\sigma^2=\frac{Q_e}{n-2}$
+$\hat\sigma^2=\frac{Q_e}{n-2}$
 
 #### 显著性检验
 
