@@ -1,8 +1,44 @@
 # 数学
 
-## 高等数学
-
 ## 应用数理统计
+
+### 特征函数
+
+#### 二项分布
+
+$P\{X=k\}=C_n^kp^kq^{n-k}$
+
+$\phi(t)=(pe^{it}+q)^n$
+
+#### 泊松分布
+
+$P\{X=k\}=\frac{\lambda^ke^{-\lambda}}{k!}$
+
+$\phi (t)=e^{\lambda(e^{it}-1)}$
+
+#### 指数分布
+
+$f(x)=\lambda e^{-\lambda x}$
+
+$\phi(t)=(1-\frac{it}{\lambda})^{-1}$
+
+#### 正态分布
+
+##### 一维正态分布
+
+$f(x)=\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}$
+
+$\phi(t)=e^{-\frac{1}{2}t^2}$
+
+$\phi_Y(t)=e^{it\mu-\frac{1}{2}\sigma^2t^2}$
+
+##### 二维正态分布
+
+$\phi(t_1,t_2)=e^{i(\mu_1t_1+u_2t_2)-\frac{1}{2}(\sigma_1^2t_1^2+2\rho\sigma_1\sigma_2t_1t_2+\sigma_2^2t_2^2)}$
+
+#### 卡方分布
+
+$\phi(t)=(1-2it)^{-\frac{n}{2}}$
 
 ### 数理统计的基本概念
 
@@ -37,7 +73,7 @@ $B_k=\frac1n \sum\limits_{i=1}^n{(X_i-\overline X)^k}$
 
 ##### 一阶矩
 
-$\overline X=EX$
+$\overline X=E(X)$
 
 ##### 二阶矩
 
@@ -79,7 +115,7 @@ $P\{拒绝H_0|H_0为真\}=\alpha$
 
 ##### 第二类错误
 
-$P\{接受H_0|H_0为假\}=\alpha$
+$P\{接受H_0|H_0为假\}=\beta$
 
 #### 单个正态总体
 
@@ -167,6 +203,42 @@ $\chi^2=\sum\limits_{i=1}^k\frac{(f_i-n\hat p_i)^2}{n\hat p_i}\sim\chi^2(k-r-1)$
 
 $r$为未知参数的个数
 
+### 回归分析
+
+#### 回归方程
+
+$L_{xx}=\sum\limits_{i=1}^{n}x_i^2-n\overline x^2$
+
+$L_{xy}=\sum\limits_{i=1}^{n}x_iy_i-n\overline x\overline y$
+
+$L_{yy}=\sum\limits_{i=1}^{n}y_i^2-n\overline y^2$
+
+$\hat\beta_1=\frac{L_{xy}}{L_{xx}}$
+
+$\hat\beta_0=\overline y-\hat\beta_1\overline x$
+
+#### $\sigma^2$估计
+
+$Q_e=L_{yy}-\hat\beta_1L_{xy}$
+
+$\sigma^2=\frac{Q_e}{n-2}$
+
+#### 显著性检验
+
+$T=\frac{\hat\beta_1\sqrt{L_{xx}}} {\hat\sigma} \sim t(n-2)$
+
+#### 置信区间
+
+$(\hat y_0 \pm \hat\sigma\sqrt{1 + \frac{1}{n} + \frac{(x_0-\overline x)^2} {L_{xx}} } t_{\alpha/2}(n-2))$
+
+#### 控制
+
+$\hat y-\delta(x')=y'$
+
+$\hat y+\delta(x'')=y''$
+
+控制区间为$(x',x'')$
+
 ### 方差分析
 
 #### 单因素
@@ -177,9 +249,9 @@ $r$为未知参数的个数
 
 | 方差来源 | 离差平方和                                                   | 自由度 | 均方离差                        | F值                                                    |
 | -------- | ------------------------------------------------------------ | ------ | ------------------------------- | ------------------------------------------------------ |
-| 因素A    | 组间离差：$S_A=\sum\limits_{j=1}^{s}\sum\limits_{i=1}^{n_j}(\overline X_{.j}-\overline X)^2$ | $s-1$  | $\overline S_A=\frac{S_A}{s-1}$ | $F=\frac{\overline S_A}{\overline S_E}\sim F(s-1,n-s)$ |
-| 误差E    | 组内离差：$S_E=\sum\limits_{j=1}^{s}\sum\limits_{i=1}^{n_j}(X_{ij}-\overline X_{.j})^2$ | $n-s$  | $\overline S_E=\frac{S_E}{n-s}$ |                                                        |
-| 总和T    | 离差平方和：$S_T=\sum\limits_{j=1}^{s}\sum\limits_{i=1}^{n_j}(X_{ij}-\overline X)^2=S_E+S_A$ | $n-1$  |                                 |                                                        |
+| 因素A    | $S_A=\sum\limits_{j=1}^{s}\sum\limits_{i=1}^{n_j}(\overline X_{.j}-\overline X)^2$ | $s-1$  | $\overline S_A=\frac{S_A}{s-1}$ | $F=\frac{\overline S_A}{\overline S_E}\sim F(s-1,n-s)$ |
+| 误差E    | $S_E=\sum\limits_{j=1}^{s}\sum\limits_{i=1}^{n_j}(X_{ij}-\overline X_{.j})^2$ | $n-s$  | $\overline S_E=\frac{S_E}{n-s}$ |                                                        |
+| 总和T    | $S_T=\sum\limits_{j=1}^{s}\sum\limits_{i=1}^{n_j}(X_{ij}-\overline X)^2$ | $n-1$  |                                 |                                                        |
 
 #### 双因素
 
@@ -190,7 +262,7 @@ $r$为未知参数的个数
 | 误差E    | $S_E=\sum\limits_{i=1}^{r} \sum\limits_{j=1}^{s} (X_{ij}-\overline X_{i.}-\overline X_{.j} + \overline X)^2$ | $(r-1)(s-1)$ | $\overline S_E=\frac{S_E}{(r-1)(s-1)}$ |                                                              |
 | 总和T    | $S_T=\sum\limits_{i=1}^{r} \sum\limits_{j=1}^{s} (X_{ij}-\overline X)^2$ | $rs-1$       |                                        |                                                              |
 
-重复试验双因素
+#### 重复试验双因素
 
 | 方差来源  | 离差平方和                                                   | 自由度       | 均方离差                               | F值                                                          |
 | --------- | ------------------------------------------------------------ | ------------ | -------------------------------------- | ------------------------------------------------------------ |
