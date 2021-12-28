@@ -68,6 +68,20 @@ $E(X)=\mu_1+\mu_2$
 
 $D(X)=\sigma_1^2+\sigma_2^2$
 
+###### 边缘分布
+
+$f_{x_2|x_1}(x_2|x_1)\sim N(u_2+\rho\frac{\sigma_2}{\sigma_1}(x-\mu_1),(1-\rho^2)\sigma_2^2)$
+
+#### 协方差与相关系数
+
+$Cov(X,Y)=E(XY)-E(X)E(Y)$
+
+$\rho_{XY}=\frac{Cov(X,Y)}{\sqrt{D(X)}\sqrt{D(Y)}}$
+
+$D(X+Y)=D(X)+D(Y)+2Cov(X,Y)$
+
+$D(X-Y)=D(X)+D(Y)-2Cov(X,Y)$
+
 ### 特征函数
 
 #### 二项分布
@@ -141,6 +155,8 @@ $B_k=\frac1n \sum\limits_{i=1}^n{(X_i-\overline X)^k}$
 
 $\overline X=E(X)$
 
+$\frac1n \sum\limits_{i=1}^n{|X_i|}=E(|X|)$
+
 ##### 二阶矩
 
 $\frac1n \sum\limits_{i=1}^n{X_i}^2=E(X^2)$
@@ -159,11 +175,11 @@ $L(x_1,x_2,...,x_n;\theta)=\prod\limits_{i=1}^nf(x_i;\theta)$
 
 ##### 无偏性
 
-$E\hat\theta=\theta$
+$E(\hat\theta)=\theta$
 
 ##### 有效性
 
-$E\hat\theta_1=\theta$，$E\hat\theta_2=\theta$，当$D\hat\theta_1<D\hat\theta_2$时，称$\hat\theta_1$比$\hat\theta_2$有效
+$E(\hat\theta_1)=\theta$，$E(\hat\theta_2)=\theta$，当$D(\hat\theta_1)<D(\hat\theta_2)$时，称$\hat\theta_1$比$\hat\theta_2$有效
 
 ##### 相合性（一致性）
 
