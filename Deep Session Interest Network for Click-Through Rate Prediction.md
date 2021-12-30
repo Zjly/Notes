@@ -58,7 +58,7 @@ $$
 
 ##### DSIN
 
-![image-20210730221836298](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210730221836298.png)
+![image-20210730221836298](https://raw.githubusercontent.com/Zjly/Image-hosting/master/image-20210730221836298.png)
 
 如图所示，DSIN模型由以下三部分组成：
 

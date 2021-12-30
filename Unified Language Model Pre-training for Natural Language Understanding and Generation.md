@@ -14,11 +14,11 @@
 
 预训练的LM(Language Model)使用大量文本语料库数据，根据上下文预测单词的方式来学习上下文化的文本表示，其结果可以通过微调来适应下游任务。如下表所示，不同类型的LM使用不同的顺序来进行进行任务的预测和目标的训练。BERT使用的双向Transformer来融合左右的上下文去预测被[MASK]的词语，这种方式能够显著的提高自然语言理解(NLU)任务的性能，但是它的双向性导致了它很难被用于自然语言生成(NLG)任务。
 
-![image-20210722112014950](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210722112014950.png)
+![image-20210722112014950](https://raw.githubusercontent.com/Zjly/Image-hosting/master/image-20210722112014950.png)
 
 论文提出了一种新的统一预训练语言模型UNILM，可以同时应用于NLU与NLG任务。UNILM是一个多层的Transformer网络，在大量的文本上进行预训练，优化了三种类型的无监督语言建模目标，如下表所示。
 
-![image-20210722112645009](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210722112645009.png)
+![image-20210722112645009](https://raw.githubusercontent.com/Zjly/Image-hosting/master/image-20210722112645009.png)
 
 论文设计了一组根据上下文[MASK]预测的完形填空任务，这些完形填空任务在上下文的定义上有所不同。对于从左到右的单向LM，要预测的[MASK]的上下文由其左侧的所有单词组成。对于从右向左的单向LM，上下文由右侧的所有单词组成。对于双向LM，上下文由左右两边的单词组成。对于序列到序列LM，第二序列（目标序列）中待预测单词的上下文由第一序列（原序列）中的所有单词和目标序列中其左侧的单词组成。
 
@@ -34,7 +34,7 @@
 
 给定输入序列$x=x_1...x_{|x|}$​，UNILM可以获得每个token的上下文化向量表示，并对单向语言模型LM、双向LM和序列到序列LM进行了共享Transformer的建模优化。为了控制对要预测单词标记的上下文访问，UNILM使用了不同的mask来进行调整自注意力机制的关注范围。
 
-![image-20210722143617252](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210722143617252.png)
+![image-20210722143617252](https://raw.githubusercontent.com/Zjly/Image-hosting/master/image-20210722143617252.png)
 
 ##### Input Representation
 
