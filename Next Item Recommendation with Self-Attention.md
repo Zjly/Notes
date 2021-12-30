@@ -23,7 +23,7 @@ $\mathcal{U}$代表一组用户，$\mathcal{I}$表示一组项目，其中$|\mat
 
 用户在短时间内的交互信息有效的反映了用户近期的需求或是意图，因此，对用户短期交互信息建模是了解用户时间偏好的有效手段。自注意力机制在捕捉序列模式方面有着良好的效果，论文模型使用了自注意力机制为用户短期交互信息进行了建模，论文方法的自注意力机制模块如下图所示：
 
-![image-20210626155358840](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210626155358840.png)
+![image-20210626155358840](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301540981.png)
 
 自注意力机制是注意力机制的一种特例，它通过单个序列与其自身进行匹配来进行表示，可以保留上下文信息并无视距离捕获元素之间的关系。注意力机制模块的输入由*query,key,value*所组成，其输出为*value*的加权和，其中权重由*query*和*key*所决定。在自注意力机制模型中，*query,key,value*是由用户最近的交互历史组成，并且它们是相同的。
 
@@ -93,7 +93,7 @@ $\left\|X_*\right\|_2\leqslant1,\left\|V_*\right\|_2\leqslant1,\left\|U_*\right\
 
 模型的架构如下图所示，它包含了用户的短暂的意图和长期的偏好，通过两者相加已生成最终的推荐列表。前者是通过自注意力网络从最近的交互操作中推断出来的，整个系统是在度量学习的框架下构建的。
 
-![image-20210702212150716](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210702212150716.png)
+![image-20210702212150716](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301540137.png)
 
 ### Conclusion
 

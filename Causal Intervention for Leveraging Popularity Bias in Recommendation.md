@@ -16,7 +16,7 @@
 
 ### 因果图
 
-![image-20210604191546929](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210604191546929.png)
+![image-20210604191546929](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301539534.png)
 
 因果图能够表示物品流行性对推荐过程的影响，传统的方法主要基于user-item匹配来计算推荐得分，U与I是原因，而C表示了U与I之间的交互概率，这种粗粒度的建模方法并没有明确地考虑到物品的流行度。
 
@@ -52,7 +52,7 @@ $m^i_t=D^t_i/\sum_\limits{j\in I}D^t_j \tag{1}$
 
 $DP(t,s)=JSD([m^t_1,...,m^t_{|I|}],[m^s_1,...,m^s_{|I|}]) \tag{2}$
 
-![image-20210607140542918](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210607140542918.png)
+![image-20210607140542918](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301539687.png)
 
 左图是阶段t和t+1之间的流行度漂移的可视图，可以看出流行度漂移在三个数据集中都有存在，不同数据集中的流行度漂移的值不相同；右图是阶段1和t之间的流行度漂移的可视图，衡量了流行度漂移的累积值，可以看出流行度漂移的值会随着时间间隔的增长而增加。
 

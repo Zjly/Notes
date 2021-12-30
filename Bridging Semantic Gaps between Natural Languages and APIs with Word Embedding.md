@@ -19,7 +19,7 @@
 
 CBOW是一种神经网络模型，可以从未标记的训练集中学习word的表示。CBOW由输入层、隐藏层和输出层所组成，隐藏层为一个$1 \times V$的向量，其用于表示低维空间中的word。CBOW使用矩阵$W_{V_{oc\times V}}$在层与层之间传递信息，其中$V_{oc\times V}$是训练集的词汇表。其框架图如下图(a)所示：
 
-![image-20210626175629133](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210626175629133.png)
+![image-20210626175629133](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301538984.png)
 
 首先，对矩阵$W_{V_{oc\times V}}$进行随机初始化，并使用一个独热向量$w_x$来表示$V_{OC}$中的每个word$x$，向量的长度与词汇表大小$|V_{OC}|$相等，其表示形式如上图(b)所示。CBOW使用独热向量在固定的窗口d中预测中心词及其周围的上下文，即在一个长度为$2d$的窗口中将$W^d_x=\{w_{x-d},...,w_{x-1},w_{x+1},...,w_{x+d}\}$作为输入，将中心词向量$w_x$作为输出。基于$W_{V_{oc\times V}}$，CBOW将输入层的信息传递到隐藏层$h$，其数学表示如公式1所示：
 
@@ -39,7 +39,7 @@ CBOW会通过反向传播来训练矩阵$W_{V_{oc\times V}}$的参数，经过�
 
 如下图所示，Word2API由四个步骤组成：数据获取；word-API元组构建；训练集创建；向量生成。
 
-![image-20210628133841572](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210628133841572.png)
+![image-20210628133841572](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301538595.png)
 
 ##### 数据获取
 

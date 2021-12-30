@@ -25,7 +25,7 @@
 - 计算内容的哈希码（第8行）
 - 将哈希值添加到创建的list中（第2/7/9行）
 
-![image-20210630151240888](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210630151240888.png)
+![image-20210630151240888](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301539876.png)
 
 <center>图1</center>
 
@@ -35,7 +35,7 @@
 
 另一部分API推荐方法利用了API的控制和数据流图，这些方法通常对控制和数据流图的子图枚举进行推荐，对程序逻辑的整体视图的利用较少。在图2中，展示了该代码片段的九个控制和数据流子图。不同的子图会被独立处理相关的API，由于较小的子图比较大的子图出现的频率更高，所以局部的较小子图内包含的API会比整体的较大子图的API更容易被推荐。
 
-![image-20210630161826260](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210630161826260.png)
+![image-20210630161826260](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301539695.png)
 
 <center>图2</center>
 
@@ -45,7 +45,7 @@
 
 从图1包含的程序代码中可以抽象出多个数据流子图，其反映了部分的程序语义逻辑。例如，图2中第七个子图表示了创建读取文件的阅读器的语义，第五个子图表示了逐行阅读内容的语义。但是，所有的子图都不能获取到需要被提供的内容（计算字符串的哈希码）的语义。
 
-![image-20210630182004527](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210630182004527.png)
+![image-20210630182004527](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301539663.png)
 
 <center>图3</center>
 
@@ -53,7 +53,7 @@
 
 其中*String*类型的变量"str"只是用来存储文件的内容，在semantics-1中没有被使用，而*int*变量"hashCode"没有在semantics-2中赋值。另外，缺少了连接semantics-1和semantics-2的API，使程序逻辑完整，可以从中推断出\$Hole\$的语义是对*String*变量的某种处理，得到一个*int*类型的值。
 
-![image-20210701110713830](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210701110713830.png)
+![image-20210701110713830](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301539282.png)
 
 <center>图4</center>
 
@@ -73,7 +73,7 @@ $\bold{x}_n(t)=\bold{f}_w(\bold{l}_n,\bold{l}_{co[n]},\bold{x}_{ne[n]}(t-1),\bol
 
 其中，$\bold{f}_w$是参数函数，$\bold{l}_n$是节点n的标签，$\bold{l}_{co[n]}$是包含节点n的边的标签，$\bold{x}_{ne[n]}(t-1)$是在第t-1个阶段时节点n相邻节点的状态，$\bold{l}_{ne[n]}$是节点n相邻节点的标签。这样，每个节点都可以得到一个节点表示。
 
-![image-20210703105123647](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210703105123647.png)
+![image-20210703105123647](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301539908.png)
 
 <center>图5</center>
 
@@ -103,7 +103,7 @@ $\bold{x}_g=tanh\left ({\sum\limits_{n \in N}\sigma ({i(\bold x_n(t),\bold l_n})
 
 <center>表1</center>
 
-![image-20210703114144461](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210703114144461.png)
+![image-20210703114144461](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301540459.png)
 
 使用一个hole节点来表示\$hole\$也就是代码的缺失，当且仅当满足下列条件之一时，存在边$(n,n')\in E$：
 
@@ -133,7 +133,7 @@ $\bold{x}_g=tanh\left ({\sum\limits_{n \in N}\sigma ({i(\bold x_n(t),\bold l_n})
 
 <center>表2</center>
 
-![image-20210703150103934](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210703150103934.png)
+![image-20210703150103934](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301540604.png)
 
 然后，根据节点之间的数据依赖关系构建边。例如，while语句中，从condition节点到第一个条件控制表达式节点创建一条类型c的边，再从body节点到循环体内的第一个节点创建一条类型c的边，最后从while节点到循环体外的节点创建一条类型c的边。如果程序包含hole节点，那就对hole节点的前后语句都创建一条类型s的边。
 
@@ -152,7 +152,7 @@ $\bold{x}_g=tanh\left ({\sum\limits_{n \in N}\sigma ({i(\bold x_n(t),\bold l_n})
 
 APIRec-CST由两个主要部件组成：API Context Graph Network和Code Token Network，通过一个联合层将它们的输出连接在一起，其结构图如图6所示。API Context Graph Network基于给定的API上下文图学习API上下文图向量，Code Token Network由嵌入层和GG-NN组成；根据给定的代码tokens学习tokens向量，由嵌入层、隐藏层和求和运算组成。联合层旨在结合API上下文向量和tokens向量并输出联合向量，然后使用softmax函数根据联合向量计算每个候选API的概率。
 
-![image-20210703165234537](C:\Users\94247\AppData\Roaming\Typora\typora-user-images\image-20210703165234537.png)
+![image-20210703165234537](https://raw.githubusercontent.com/Zjly/Image-hosting/master/202112301540964.png)
 
 <center>图6</center>
 
