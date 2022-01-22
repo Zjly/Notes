@@ -46,20 +46,22 @@ for (int key : hashmap.keySet()) {
 
 ### Latex公式表示
 
-|     名称     |                 Latex表示                  |                    示例                    |
-| :----------: | :----------------------------------------: | :----------------------------------------: |
-|   粗体字母   |                 \mathbf{}                  |                $\mathbf{A}$                |
-|   空心字母   |                 \mathbb{}                  |                $\mathbb{A}$                |
-|    大括号    | \begin{cases} a & b \\\\ c & d \end{cases} | $\begin{cases} a & b \\ c & d \end{cases}$ |
-|    无限大    |                   \infty                   |                  $\infty$                  |
-|     空格     |                     \                      |                    $\ $                    |
-|     分数     |                \frac{a}{b}                 |               $\frac{a}{b}$                |
-|   求和符号   |              \sum\limits_{a}               |             $\sum\limits_{a}$              |
-| 字母上方箭头 |  \overrightarrow{a} 或 \overleftarrow{b}   | $\overrightarrow{a}$或$\overleftarrow{b}$  |
-|     圈加     |                   \oplus                   |                  $\oplus$                  |
-|     换行     |   \begin{split} &aaa \\ &bb \end{split}    |  $\begin{split} &aaa \\ &bb \end{split}$   |
-| 字母上方横线 |                \overline{a}                |               $\overline{a}$               |
-|  字母上方^   |                  \hat{a}                   |                 $\hat{a}$                  |
+|     名称     |                    Latex表示                    |                       示例                        |
+| :----------: | :---------------------------------------------: | :-----------------------------------------------: |
+|   粗体字母   |                   \mathbf{A}                    |                   $\mathbf{A}$                    |
+|   空心字母   |                   \mathbb{A}                    |                   $\mathbb{A}$                    |
+|   花体字母   |                   \mathcal{A}                   |                   $\mathcal{A}$                   |
+|    大括号    |   \begin{cases} a & b \\\\ c & d \end{cases}    |    $\begin{cases} a & b \\ c & d \end{cases}$     |
+|   多行公式   | \begin{gather} 1 \\ 2 \tag{N} \\ 3 \end{gather} | $\begin{gather} 1 \\ 2 \tag{N} \\ 3 \end{gather}$ |
+|    无限大    |                     \infty                      |                     $\infty$                      |
+|     空格     |                        \                        |                       $\ $                        |
+|     分数     |                   \frac{a}{b}                   |                   $\frac{a}{b}$                   |
+|   求和符号   |                 \sum\limits_{a}                 |                 $\sum\limits_{a}$                 |
+| 字母上方箭头 |     \overrightarrow{a} 或 \overleftarrow{b}     |     $\overrightarrow{a}$或$\overleftarrow{b}$     |
+|     圈加     |                     \oplus                      |                     $\oplus$                      |
+|     换行     |      \begin{split} &aaa \\ &bb \end{split}      |      $\begin{split} &aaa \\ &bb \end{split}$      |
+| 字母上方横线 |                  \overline{a}                   |                  $\overline{a}$                   |
+|  字母上方^   |                     \hat{a}                     |                     $\hat{a}$                     |
 
 ### Git修改已提交的commit的作者信息
 
