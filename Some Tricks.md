@@ -113,3 +113,10 @@ for (int key : hashmap.keySet()) {
 - 双击Classes打开文件
 - 删除不需要的后缀名
 
+### Linux文件夹解锁
+
+- sudo chown -R $USER 文件夹路径
+
+### Linux双卡运行
+
+- CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 train.py
