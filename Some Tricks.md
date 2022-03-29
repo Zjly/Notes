@@ -122,3 +122,11 @@ for (int key : hashmap.keySet()) {
 ### Linux双卡运行
 
 - CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch --nproc_per_node=2 train.py
+
+### Linux增加分辨率
+
+1. 输入指令：cvt 1920 1080
+2. 复制输出内容modeline...后面的的内容
+3. 输入指令：xrandr --newmode （复制的内容）
+4. 输入指令：xrandr --addmode VGA-1 "1920x1080_60.00"
+5. 进入图形化界面设置新的分辨率
